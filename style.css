@@ -65,7 +65,17 @@ h1 {
   --text-color-light: hsl(0 0% 98%);
   --body-color: hsl(0 0% 98%);
 }
-/*====== LAYOUT ===========================*/
+
+/*====== LOGO ===========================*/
+.logo {
+  font: 700 1.31rem 'Poppins', sans-serif;
+  color: var(--title-color);
+}
+.logo span {
+  color: var(--base-color);
+}
+
+/*====== NAVEGATION ===========================*/
 .container {
   width: 95%;
   margin-left: 1.5rem;
@@ -80,7 +90,7 @@ h1 {
 .section {
   padding: 5rem 0;
 }
- 
+
 #header {
   border-bottom: 1px solid #e4e4e4;
   margin-bottom: 2rem;
@@ -102,16 +112,27 @@ nav {
   width: 100%;
 }
 
-.logo {
-  font: 700 1.31rem 'Poppins', sans-serif;
-  color: var(--title-color);
+nav .menu {
+  opacity: 0;
+  visibility: hidden;
 }
-.logo span {
-  color: var(--base-color);
+
+nav.show .menu{
+  opacity: 1;
+  visibility: visible;
+
+  background: var(--body-color);
+
+  height: 100vh;
+  width: 100vh;
+
+  position: fixed;
+  top: 0;
+  left: 0;
 }
 
 main {
-  margin-top: var(--header-height);
+  margin-top: calc(var(--header-height)+2rem);
 }
 
 /*====== HOME ===========================*/
@@ -162,3 +183,5 @@ main {
   margin-bottom: 2rem;
   max-width: 100%;
 }
+
+/*====== ABAUT ===========================*/
