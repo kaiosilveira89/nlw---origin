@@ -385,7 +385,7 @@ nav.show div.icon-close {
 
 /*====== TESTIMONIALS ===========================*/
 
-#testimonials.section {
+#testimonials {
   background: white;
 }
 
@@ -395,9 +395,33 @@ nav.show div.icon-close {
   border-radius: 0.25rem;
 }
 
+#testimonials blockquote p {
+  position: relative;
+  text-indent: 1.875rem;
+  margin-bottom: 1.5rem;
+  color: var(--title-color)
+}
+
 #testimonials blockquote p span {
   font: 700 3rem serif;
   position: absolute;
+  top: -0.5rem;
+  left: -1.875rem;
   color: var(--base-color);
+}
 
+#testimonials cite {
+  display: flex;
+  align-items: center;
+  font-style: normal;
+  color: var(--text-color);
+
+}
+
+#testimonials cite img {
+  width: 2rem;
+  height: 2rem;
+  object-fit: cover;
+  clip-path: circle();
+  margin-right: 0.5rem;
 }
