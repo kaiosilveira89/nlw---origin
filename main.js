@@ -30,3 +30,12 @@ window.addEventListener('scroll', function () {
 })
 
 /*testimonial slider*/
+const swiper = new Swiper('.swiper-container', {
+  // If we need pagination
+  slidesPerView: 1,
+  pagination: {
+    el: '.swiper-pagination'
+  },
+  mousewheel: true,
+  keyboard: true,
+})
