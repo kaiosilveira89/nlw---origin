@@ -165,6 +165,10 @@ main {
   color: var(--base-color);
 }
 
+footer .logo span {
+  color: var(--body-color);
+}
+
 /*====== NAVEGATION ===========================*/
 nav {
   height: var(--header-height);
@@ -467,9 +471,27 @@ nav.show div.icon-close {
 }
 
 #contact ul li {
-  display:flex;
+  display: flex;
   align-items: center;
 }
 #contact ul li i {
-color: var(--base-color)
+  color: var(--base-color);
+}
+
+/*====== FOOTER ===========================*/
+
+#footer {
+  background-color: var(--base-color);
+}
+
+#footer li{
+  color: var(--text-color-light);
+}
+
+#footer ul.grid {
+  gap: 2rem;
+}
+
+#footer .text p {
+  margin-bottom: 2rem;
 }
