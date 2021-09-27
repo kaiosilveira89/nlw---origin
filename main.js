@@ -1,4 +1,4 @@
-/* abre e fecha o menu quando clikar no menu*/
+/* abre e fecha o menu quando clicar no menu*/
 const nav = document.querySelector('#header nav')
 const toggle = document.querySelectorAll('nav .toggle')
 
@@ -22,11 +22,14 @@ const header = document.querySelector('#header')
 const navHeight = header.offsetHeight
 
 window.addEventListener('scroll', function () {
-  if (window.scrollY > navHeight) {
-    header.classList.toggle('scroll')
-  } else {
-    header.classList.remove('scroll')
-  }
+   header.classList.toggle('scroll', window.scrollY >= 560)  
+})
+
+/*mostra botão para voltar ao topo*/
+const backToTopButton = document.querySelector('.back-to-top')
+
+window.addEventListener('scroll', function () { 
+  backToTopButton.classList.toggle('show', window.scrollY >= 560 )
 })
 
 /*testimonial slider*/
