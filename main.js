@@ -20,16 +20,12 @@ for (const link of links) {
 /*mudar o header da pagina quando der scroll*/
 const header = document.querySelector('#header')
 const navHeight = header.offsetHeight
-
-window.addEventListener('scroll', function () {
-   header.classList.toggle('scroll', window.scrollY >= 560)  
-})
-
-/*mostra botão para voltar ao topo*/
+/*mostra botão para voltar ao topo quando der scroll*/
 const backToTopButton = document.querySelector('.back-to-top')
 
-window.addEventListener('scroll', function () { 
-  backToTopButton.classList.toggle('show', window.scrollY >= 560 )
+window.addEventListener('scroll', function () {
+  header.classList.toggle('scroll', window.scrollY >= navHeight)
+  backToTopButton.classList.toggle('show', window.scrollY >= 560)
 })
 
 /*testimonial slider*/
