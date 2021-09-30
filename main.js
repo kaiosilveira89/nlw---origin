@@ -18,15 +18,17 @@ for (const link of links) {
 }
 
 /*mudar o header da pagina quando der scroll*/
-const header = document.querySelector('#header')
-const navHeight = header.offsetHeight
-/*mostra botão para voltar ao topo quando der scroll*/
-const backToTopButton = document.querySelector('.back-to-top')
-
-window.addEventListener('scroll', function () {
+function changeHeaderWhenScroll() {
+  const header = document.querySelector('#header')
+  const navHeight = header.offsetHeight
   header.classList.toggle('scroll', window.scrollY >= navHeight)
+}
+
+/*mostra botão para voltar ao topo quando der scroll*/
+function backToTop() {
+  const backToTopButton = document.querySelector('.back-to-top')
   backToTopButton.classList.toggle('show', window.scrollY >= 560)
-})
+}
 
 /*testimonial slider*/
 const swiper = new Swiper('.swiper-container', {
@@ -57,3 +59,9 @@ scrollReveal.reveal(
 footer .brand, footer .social`,
   { interval: 100 }
 )
+
+/* When Scroll */
+window.addEventListener('scroll', function () {
+  changeHeaderWhenScroll()
+  backToTop()
+})
