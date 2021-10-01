@@ -20,6 +20,8 @@ img {
 /*====== VARIABLES ===========================*/
 :root {
   --header-height: 4.5rem;
+
+  /* colors */
   --hue: 159;
   /* HSL color mode */
   --base-color: hsl(var(--hue) 36% 57%);
@@ -31,9 +33,9 @@ img {
   --body-color: hsl(0 0% 98%);
 
   /* Font */
-
   --title-font-size: 1.875rem;
   --subtitle-font-size: 1rem;
+
   --title-font: 'Poppins', sans-serif;
   --body-font: 'DM Sans', sans-serif;
 }
@@ -150,12 +152,12 @@ body {
   margin-bottom: 2rem;
   display: flex;
 
-  width: 100%;
   position: fixed;
   top: 0;
   left: 0;
-  background-color: var(--body-color);
   z-index: 100;
+  background-color: var(--body-color);
+  width: 100%;
 }
 
 #header.scroll {
@@ -194,7 +196,8 @@ nav ul li a {
   position: relative;
 }
 
-nav ul li a:hover {
+nav ul li a:hover/*,
+nav ul li a.active*/ {
   color: var(--base-color);
 }
 
@@ -211,7 +214,8 @@ nav ul li a::after {
   transition: width 0.2s;
 }
 
-nav ul li a:hover::after {
+nav ul li a:hover::after/*,
+nav ul li a.active::after*/ {
   width: 100%;
 }
 
@@ -301,14 +305,14 @@ nav.show div.icon-close {
   z-index: 0;
 }
 
-#home .image img,
-#home .image::before {
-  border-radius: 0.25rem;
-}
-
 #home .image img {
   position: relative;
   right: 2.93rem;
+}
+
+#home .image img,
+#home .image::before {
+  border-radius: 0.25rem;
 }
 
 #home .text {
@@ -327,7 +331,7 @@ nav.show div.icon-close {
 
 /*====== ABOUT ===========================*/
 
-#about.section {
+#about {
   background: white;
 }
 
@@ -370,12 +374,12 @@ nav.show div.icon-close {
 }
 
 .card {
-  background: white;
   padding: 3.625rem 2rem;
   box-shadow: 0px 0px 12px rgba(0, 0, 0, 0.08);
   border-bottom: 0.25rem solid var(--base-color);
   border-radius: 0.25rem 0.25rem 0 0;
   text-align: center;
+  background: white;
 }
 
 .card i {
@@ -442,7 +446,7 @@ nav.show div.icon-close {
   margin-right: 0.5rem;
 }
 
-/* SWIPER */
+/* swiper */
 .swiper-slide {
   height: auto;
   padding: 4rem 1rem;
@@ -496,8 +500,8 @@ footer.section {
 }
 
 footer .logo {
-  margin-bottom: 1.5rem;
   display: inline-block;
+  margin-bottom: 1.5rem;
 }
 
 footer .brand p {
@@ -506,8 +510,8 @@ footer .brand p {
 }
 
 footer i {
-  color: var(--text-color-light);
   font-size: 1.5rem;
+  color: var(--text-color-light);
 }
 
 footer .social {
@@ -523,18 +527,24 @@ footer .social a:hover {
   transform: translateY(-8px);
 }
 
+/* Back to top */
 .back-to-top {
   background: var(--base-color);
   color: var(--text-color-light);
+
   position: fixed;
   right: 1rem;
   bottom: 1rem;
+
   padding: 0.5rem;
   clip-path: circle();
+
   font-size: 1.5rem;
   line-height: 0;
+
   visibility: hidden;
   opacity: 0;
+
   transition: 0.3s;
   transform: translateY(100%);
 }
@@ -560,6 +570,14 @@ footer .social a:hover {
     padding: 10rem 0;
   }
 
+  .section header,
+  #testimonials header {
+    max-width: 32rem;
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
   .button {
     height: 3.125rem;
   }
@@ -579,15 +597,19 @@ footer .social a:hover {
 
   nav .menu ul li a.title {
     font: 400 1rem var(--body-font);
+    /*-webkit-font-smoothing: antialiased;*/
   }
-
+/*
+  nav .menu ul li a.title.active {
+    font-weight: bold;
+    -webkit-font-smoothing: auto;
+  }
+*/
   nav .icon-menu {
     display: none;
   }
 
-  nav .container {
-    align-items: center;
-  }
+  /*======== LAYOUT ==========*/
 
   main {
     margin-top: var(--header-height);
@@ -596,24 +618,47 @@ footer .social a:hover {
   /*======== HOME ==========*/
 
   #home .container {
-    display: flex;
     grid-auto-flow: column;
+    justify-content: space-between;
     margin: 0 auto;
   }
 
   #home .image {
     order: 1;
+    margin: auto;
   }
 
   #home .text {
     order: 0;
-    text-align: left;
     max-width: 24rem;
+    text-align: left;
+    margin: auto;
   }
 
+  /*======== ABOUT ==========*/
+  #about .container {
+    margin: 0 auto;
+    grid-auto-flow: column;
+  }
+
+  /*======== SERVICES ==========*/
+
+  .cards {
+    grid-template-columns: 1fr 1fr 1fr;
+  }
+
+  .card {
+    padding-left: 3rem;
+    padding-right: 3rem;
+  }
+
+  /*====== TESTIMONIALS ===========================*/
+  #testimonials .container {
+    margin-left: auto;
+    margin-right: auto;
+  }
 }
 /* large devices: 1023 > */
-
 /* large devices: 992 > */
 @media (min-width: 992px) {
   :root {
