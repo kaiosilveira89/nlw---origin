@@ -17,12 +17,17 @@ img {
   height: auto;
 }
 
+img.icon {
+  width: 35%;
+  height: auto;
+}
+
 /*====== VARIABLES ===========================*/
 :root {
   --header-height: 4.5rem;
 
   /* colors */
-  --hue: 159;
+  --hue: 45;
   /* HSL color mode */
   --base-color: hsl(var(--hue) 36% 57%);
   --base-color-second: hsl(var(--hue) 65% 88%);
